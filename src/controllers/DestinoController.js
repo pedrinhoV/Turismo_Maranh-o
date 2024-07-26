@@ -42,10 +42,4 @@ module.exports = {
         }
         return res.status(200).send(destinoFinal);
     },
-    async update(req, res) {
-
-    },
-    async delete(req, res) {
-
-    },
 }
