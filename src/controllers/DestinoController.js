@@ -35,7 +35,7 @@ module.exports = {
 
         const destinoFinal = {
             nome : destinoCompleto.nome,
-            quatidadesAtrativos : destinoCompleto.qtd_atrativos,
+            quantidadeAtrativos : destinoCompleto.qtd_atrativos,
             localizacao : destinoCompleto.localizacao,
             descricao : destinoCompleto.descricao,
             fotos: destinoCompleto.foto,
