@@ -28,10 +28,6 @@ module.exports = {
         type: Sequelize.STRING(500),
         allowNull: false,
       },
-      foto: {
-        type: Sequelize.BLOB,
-        allowNull: true,
-      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
