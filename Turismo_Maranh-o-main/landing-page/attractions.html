@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos Turísticos</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .att-more-description {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="general">
+            <header>
+                <nav>
+                    <div class="container">
+                        <div class="logo">
+                            <img src="../img/inova.png" alt="Logo">
+                        </div>
+                        <div class="links">
+                            <ul class="menu">
+                                <li><a href="index.html">Home</a></li>
+                            </ul>
+                            <div class="menu-mobile">
+                                <i class='bx bx-menu'></i>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="collums">
+                    <div class="collum-left">
+                        <h1 id="titulo">Pontos Turísticos</h1>
+                        <p id="description-attractions">Explore os maravilhosos pontos turísticos da cidade.</p>
+                        <div class="attraction">
+                            <button class="toggle-description" id="toggle-description1">+</button>
+                            <h2>Ponto Turístico 1</h2>
+                            <p class="attraction-description" id="description1">Descrição breve do Ponto Turístico 1.</p>
+                        </div>
+                        <p class="att-more-description" id="descrip-ponto-turistico1">Descrição detalhada do Ponto Turístico 1.</p>
+                        <div class="attraction">
+                            <button class="toggle-description" id="toggle-description2">+</button>
+                            <h2>Ponto Turístico 2</h2>
+                            <p class="attraction-description" id="description2">Descrição breve do Ponto Turístico 2.</p>
+                        </div>
+                        <p class="att-more-description" id="descrip-ponto-turistico2">Descrição detalhada do Ponto Turístico 2.</p>
+                        <div class="attraction">
+                            <button class="toggle-description" id="toggle-description3">+</button>
+                            <h2>Ponto Turístico 3</h2>
+                            <p class="attraction-description" id="description3">Descrição breve do Ponto Turístico 3.</p>
+                        </div>
+                        <p class="att-more-description" id="descrip-ponto-turistico3">Descrição detalhada do Ponto Turístico 3.</p>
+                    </div>
+                    <div class="collum-right">
+                        <div class="att-img">
+                            <img src="https://via.placeholder.com/500" id="image-attraction" alt="Imagem do Ponto Turístico">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const attractionId = new URLSearchParams(window.location.search).get('attractionId');
+        
+            // Mapeamento das informações de pontos turísticos
+            fetch(`https://api-desafio-5-turismo.onrender.com/tudo/atrativos`).then(res => res.json())
+            .then((dados) => {
+                const attractionsData = {
+                'attraction-Barreirinhas': {
+                    description: 'Exploração dos Lençóis Maranhenses, com suas vastas dunas e lagoas.',
+                    points: [
+                        { id: 'description1', title: dados[0].nome, description: dados[0].descricao, descriptionEx: dados[0].dicasVisitacao, imgSrc: './img/image1.jpg' },
+                        { id: 'description2', title: dados[7].nome, description: dados[7].descricao, descriptionEx: dados[7].dicasVisitacao, imgSrc: './img/image2.jpg' },
+                        { id: 'description3', title: dados[8].nome, description: dados[8].descricao, descriptionEx: dados[8].dicasVisitacao, imgSrc: './img/image3.jpg' }
+                    ]
+                },
+                'attraction-São Luís': {
+                    description: 'Descubra o centro histórico de São Luís e sua rica cultura.',
+                    points: [
+                        { id: 'description1', title: dados[1].nome, description: dados[1].descricao, descriptionEx: dados[1].dicasVisitacao, imgSrc: './img/image1.jpg' },
+                        { id: 'description2', title: dados[3].nome, description: dados[3].descricao, descriptionEx: dados[3].dicasVisitacao, imgSrc: './img/image2.jpg' },
+                        { id: 'description3', title: dados[4].nome, description: dados[4].descricao, descriptionEx: dados[4].dicasVisitacao, imgSrc: './img/image3.jpg' }
+                    ]
+                },
+                'attraction-Carolina': {
+                    description: 'Explore as belezas naturais da Chapada das Mesas.',
+                    points: [
+                        { id: 'description1', title: dados[2].nome, description: dados[2].descricao, descriptionEx: dados[2].dicasVisitacao, imgSrc: './img/image1.jpg' },
+                        { id: 'description2', title: dados[5].nome, description: dados[5].descricao, descriptionEx: dados[5].dicasVisitacao, imgSrc: './img/image2.jpg' },
+                        { id: 'description3', title: dados[6].nome, description: dados[6].descricao, descriptionEx: dados[6].dicasVisitacao, imgSrc: './img/image3.jpg' }
+                    ]
+                },
+                'attraction-Alcântara': {
+                    description: 'Visite Alcântara e suas impressionantes ruínas históricas.',
+                    points: [
+                        { id: 'description1', title: dados[9].nome, description: dados[9].descricao, descriptionEx: dados[9].dicasVisitacao, imgSrc: './img/image1.jpg' },
+                        { id: 'description2', title: dados[10].nome, description: dados[10].descricao, descriptionEx: dados[10].dicasVisitacao, imgSrc: './img/image2.jpg' },
+                        { id: 'description3', title: dados[11].nome, description: dados[11].descricao, descriptionEx: dados[11].dicasVisitacao, imgSrc: './img/image3.jpg' }
+                    ]
+                }
+            };
+            
+            const descriptionElement = document.getElementById('description-attractions');
+            const attractionPoints = attractionsData[attractionId] || {};
+        
+            if (descriptionElement && attractionPoints) {
+                descriptionElement.innerText = attractionPoints.description;
+                attractionPoints.points.forEach(point => {
+                    const pointElement = document.getElementById(point.id);
+                    if (pointElement) {
+                        pointElement.innerText = point.description;
+                        pointElement.previousElementSibling.innerText = point.title;
+                    }
+                });
+            }
+            for (i=0; i<attractionsData[attractionId].points.length; i++) {
+                const descriptionExtend = document.getElementById(`descrip-ponto-turistico${i+1}`);
+                descriptionExtend.innerHTML = attractionsData[attractionId].points[i].descriptionEx;
+            }
+        
+            })
+            
+            // Função para alternar a visibilidade das descrições detalhadas e mudar a imagem
+            const toggleDescriptionsAndImage = (descriptionId, imgSrc) => {
+                const descriptionElement = document.getElementById(descriptionId);
+                const imageElement = document.getElementById('image-attraction');
+                if (descriptionElement) {
+                    descriptionElement.style.display = descriptionElement.style.display === 'block' ? 'none' : 'block';
+                }
+                if (imageElement) {
+                    imageElement.src = imgSrc;
+                }
+            };
+        
+            // Adiciona os eventos de clique aos botões
+            document.getElementById('toggle-description1').addEventListener('click', () => toggleDescriptionsAndImage('descrip-ponto-turistico1', './img/image1.jpg'));
+            document.getElementById('toggle-description2').addEventListener('click', () => toggleDescriptionsAndImage('descrip-ponto-turistico2', './img/image2.jpg'));
+            document.getElementById('toggle-description3').addEventListener('click', () => toggleDescriptionsAndImage('descrip-ponto-turistico3', './img/image3.jpg'));
+        });
+        </script>  
+    <script src="../main.js"></script>
+</body>
+</html>
