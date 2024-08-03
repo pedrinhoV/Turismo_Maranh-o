@@ -65,10 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    addCardClickListener(card1, '../img/lencol-MA.png', 'Lençóis Maranhenses', 'Parque Nacional com vastas dunas de areia branca e lagoas de água doce.', 'visit-lencois');
-    addCardClickListener(card2, '../img/centro-historico-sao-luis.jpg', 'São Luís', 'Capital do Maranhão, conhecida por seu centro histórico e cultura vibrante.', 'visit-sao-luis');
-    addCardClickListener(card3, '../img/chapada-background.jpg', 'Chapada das Mesas', 'Parque Nacional famoso por suas formações rochosas e cachoeiras.', 'visit-chapada');
-    addCardClickListener(card4, '../img/alcantara-background.jpg', 'Alcântara', 'Histórica cidade colonial com ruínas e praias tranquilas.', 'visit-alcantara');
+    fetch('https://api-desafio-5-turismo.onrender.com/tudo/destinos').then(res => res.json()).then((dados) => {
+        addCardClickListener(card1, '../img/lencol-MA.png', 'Barreirinhas', dados[2].descricao , 'visit-lencois');
+        addCardClickListener(card2, '../img/centro-historico-sao-luis.jpg', 'São Luís', dados[0].descricao, 'visit-sao-luis');
+        addCardClickListener(card3, '../img/chapada-background.jpg', 'Carolina', dados[1].descricao, 'visit-chapada');
+        addCardClickListener(card4, '../img/alcantara-background.jpg', 'Alcântara', dados[3].descricao, 'visit-alcantara');
+    })
 
     // Mostrar mapa e button.cancel
     visitButton.addEventListener('click', () => {
