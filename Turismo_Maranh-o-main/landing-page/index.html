@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>Desafio V</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
     <main>
         <div class="general">
@@ -19,10 +17,8 @@
                             <img src="../img/inova.png" alt="Logo">
                         </div>
                         <div class="links">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Passeios</a></li>
-                                <li><a href="#">Sobre</a></li>
+                            <ul class="menu">
+                                <li><a href="index.html">Home</a></li>
                             </ul>
                             <div class="menu-mobile">
                                 <i class='bx bx-menu'></i>
@@ -36,7 +32,12 @@
                     <div class="collum-left">
                         <h1>Trilhas - TourMA</h1>
                         <p>Trilhas: TourMA é uma inovadora iniciativa voltada para a promoção e facilitação do turismo no território maranhense...</p>
-                        <button class="visit">VISITAR</button>
+
+                        <div class="flex">
+                            <button class="visit">VISITAR</button>
+                            <button class="cancel">X</button>
+                            <a id=link href="attractions.html?attractionId=attraction-Barreirinhas"><button class="attractions" data-id="attraction-Barreirinhas">ATRAÇÕES</button></a>
+                        </div>
                         <div class="map map-lencois">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255108.06326249725!2d-43.126347090214885!3d-2.4859385162132788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f19ee15e39be5f%3A0x2d2895d0d57e9beb!2sParque%20Nacional%20dos%20Len%C3%A7%C3%B3is%20Maranhenses!5e0!3m2!1spt-BR!2sbr!4v1720941134918!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                     <div class="collum-right">
-                       <div onclick="updateAttractionsButton('Barreirinhas') "   class="card card1">
+                        <div onclick="updateAttractionsButton('Barreirinhas') "   class="card card1">
                             <h5>BARREIRINHAS</h5>
                         </div>
 
@@ -72,8 +73,7 @@
             </div>
         </div>
     </main>
-    <script src="../main.js"></script>
     <script src="./script.js"></script>
+    <script src="../main.js"></script>
 </body>
-
 </html>
