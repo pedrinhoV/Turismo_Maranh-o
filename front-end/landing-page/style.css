@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* VARIAVEIS */
+:root {
+    --color-main-one: #F37820;
+    --color-main-two: #FFFFFF;
+    --color-main-tree: #121212;
+    --color-main-four: #e68c4c;
+}
+
+.flex{
+    display: flex;
+    padding: 15px 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--color-main-one);
+}
+
+ul {
+    list-style: none;
+}
+
+header .container {
+    justify-content: space-between;
+}
+
+.general {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/maranhao.jpg) no-repeat;
+    background-position: left;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 81rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* MENU MOBILE */
+.links .menu-mobile {
+    color: var(--color-main-one);
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+/* MENU NORMAL */
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links ul {
+    display: flex;
+    height: 70px;
+    padding-top: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.links ul li a {
+    display: inline-block;
+    margin: 0 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.links ul li a:hover {
+    margin: 0 1rem;
+    color: var(--color-main-two);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.collums {
+    padding-top: 5%;
+    display: grid;
+    grid-template-areas:
+        "c1 c2"
+        "c1 c2";
+}
+
+.collum-left {
+    grid-area: c1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10%;
+    padding-left: 10%;
+    max-width: 600px;
+}
+
+.collum-left h1 {
+    font-size: 50px;
+    color: var(--color-main-one);
+    padding-bottom: 10px;
+    animation: 1s titletLeft forwards;
+}
+
+.collum-left p {
+    display: flex;
+    justify-content: flex-end;
+    font-family: '', sans-serif;
+    font-size: 15px;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: var(--color-main-two);
+    animation: 2s textTop forwards;
+}
+
+
+.attraction {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.attraction h2 {
+    font-size: 24px;
+    color: var(--color-main-one);
+    margin-left: 10px;
+}
+
+.attraction-description {
+    display: none;
+    font-size: 14px;
+    color: var(--color-main-two);
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.toggle-description {
+    background-color: var(--color-main-four);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    display: block;
+}
+
+button.toggle-description {
+    border-radius: 50px;
+}
+
+.carousel img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.collum-right {
+    grid-area: c2;
+    width: 100%;
+    text-align: center;
+    padding-left: 50px;
+}
+
+.card {
+    width: 250px;
+    height: 230px;
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-position: bottom;
+    background-size: contain;
+    display: inline-block;
+    transition: .7s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    opacity: .7;
+    transition: .5s;
+}
+
+.card h5 {
+    color: #121212;
+    transition: .5s;
+}
+
+.card:hover h5 {
+    color: var(--color-main-two);
+    transform: translateY(100px);
+    font-size: 15px;
+}
+
+.card1 {
+    background: url(../img/lencois-MA.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card2 {
+    background: url(../img/Sao-Luis-MA.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card3 {
+    background: url(../img/chapada-das-mesas-maranhao.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card4 {
+    background: url(../img/Alcântara.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* Ajustes nos botões */
+.flex button {
+    margin: 0 5px; /* Adiciona uma pequena distância entre os botões */
+}
+
+/* Outros estilos dos botões */
+button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    width: 200px;
+    border: none;
+    outline: none;
+    line-height: 1;
+    text-align: center;
+    background: var(--color-main-one);
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s linear;
+    display: none;
+}
+
+button.visit {
+    display: none;
+    border-radius: 50px;
+}
+
+button.attractions {
+    display: none;
+    border-radius: 50px;
+}
+
+button:hover {
+    background: transparent;
+    border: 1px solid var(--color-main-one);
+    color: var(--color-main-one);
+    font-weight: 600;
+}
+
+button.cancel {
+    display: none;
+    background: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.cancel:hover {
+    background: darkred;
+}
+
+.map {
+    display: none;
+    padding: 20px 10px;
+}
+
+.map.show {
+    display: block;
+}
+
+/* Detalhes do Destino */
+#destino-detalhes {
+    display: none;
+    padding: 20px;
+    background-color: var(--color-main-two);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#detalhes-titulo {
+    font-size: 36px;
+    color: var(--color-main-one);
+}
+
+#detalhes-descricao {
+    font-size: 18px;
+    color: var(--color-main-tree);
+    margin: 20px 0;
+}
+
+#detalhes-visitar {
+    background: var(--color-main-one);
+    color: var(--color-main-two);
+
+
+}
+
+p.att-more-description {
+    display: none;
+}
+
+@media (max-width: 1005px) {
+
+    /* MENU MOBILE */
+    .links .menu-mobile {
+        display: block;
+        padding-top: 2rem;
+        position: absolute;
+        top: 0;
+        right: 10%;
+        outline: none;
+        border: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    nav .links ul {
+        flex-direction: column;
+        display: block;
+    }
+
+    nav .links ul.active {
+        display: flex;
+    }
+
+    nav .links ul li {
+        margin: 10px 0;
+    }
+
+    .flex {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 50px;
+    }
+
+    .flex button {
+        width: 100%;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+
+    .container .links {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .links ul {
+        display: none;
+    }
+
+    .container .links.active ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        background-color: var(--color-main-tree);
+    }
+
+    .container .links ul li a {
+        padding-top: 30%;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .collums {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 10%;
+        display: grid;
+        grid-template-areas:
+            "c1 c1"
+            "c2 c2";
+    }
+
+    .collum-left {
+        width: 100%;
+        min-width: 80%;
+        flex-direction: column;
+        grid-area: c1;
+        padding-top: 2%;
+        padding-bottom: 1%;
+    }
+
+    .collum-left h1 {
+        font-size: 50px;
+        padding-bottom: 10px;
+    }
+
+    .collum-right {
+        width: 100%;
+        min-width: 100%;
+        grid-area: c2;
+        padding-top: 15%;
+        justify-content: center;
+    }
+
+    .card {
+        width: 180px;
+        height: 170px;
+    }
+
+    .card h5 {
+        font-size: 10px;
+    }
+
+    .card:hover h5 {
+        color: var(--color-main-two);
+        transform: translateY(100px);
+        font-size: 11px;
+    }
+
+
+    /* styles for attractions.html */
+    .attraction {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .attraction h2 {
+        margin-left: 10px;
+    }
+
+    .toggle-description {
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    
+
+    .attraction-description {
+        display: none;
+    }
+
+    .att-more-description {
+        display: none;
+    }
+
+    .att-img img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilos adicionais para a responsividade e melhorias de layout */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 20px;
+    }
+
+    .collum-left, .collum-right {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .collum-left, .collum-right {
+        max-width: 100%;
+    }
+
+    .att-img img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header .logo img {
+        width: 120px;
+    }
+
+    .toggle-description {
+        width: 25px;
+        height: 25px;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        width: 100px;
+    }
+
+    .toggle-description {
+        width: 20px;
+        height: 20px;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    .att-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .collum-left, .collum-right {
+        padding: 0 10px;
+    }
+}
