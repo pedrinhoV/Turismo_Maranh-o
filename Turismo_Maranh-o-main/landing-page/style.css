@@ -508,3 +508,79 @@ p.att-more-description {
         height: auto;
     }
 }
+
+/* Estilos adicionais para a responsividade e melhorias de layout */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 20px;
+    }
+
+    .collum-left, .collum-right {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .collum-left, .collum-right {
+        max-width: 100%;
+    }
+
+    .att-img img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header .logo img {
+        width: 120px;
+    }
+
+    .toggle-description {
+        width: 25px;
+        height: 25px;
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        width: 100px;
+    }
+
+    .toggle-description {
+        width: 20px;
+        height: 20px;
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    .att-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .collum-left, .collum-right {
+        padding: 0 10px;
+    }
+}
