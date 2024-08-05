@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio V</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <div class="general">
+            <header>
+                <nav>
+                    <div class="container">
+                        <div class="logo">
+                            <img src="./img/inova.png" alt="Logo">
+                        </div>
+                        <div class="links">
+                            <ul class="menu">
+                                <li class="home"><a href="index.html">Home</a></li>
+                            </ul>
+                            <div class="menu-mobile">
+                                <i class='bx bx-menu'></i>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="collums">
+                    <div class="collum-left">
+                        <h1>Trilhas - TourMA</h1>
+                        <p>Trilhas: TourMA é uma inovadora iniciativa voltada para a promoção e facilitação do turismo no território maranhense...</p>
+
+                        <div class="flex">
+                            <button class="visit">VISITAR</button>
+                            <button class="cancel">X</button>
+                            <a id=link href="attractions.html?attractionId=attraction-Barreirinhas"><button class="attractions" data-id="attraction-Barreirinhas">ATRAÇÕES</button></a>
+                        </div>
+                        <div class="map map-lencois">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31881.767607837726!2d-42.83074343967512!3d-2.7507902724854607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f21e34a2658ad3%3A0x5dc8dfbc9b0672d1!2sBarreirinhas%2C%20MA%2C%2065590-000!5e0!3m2!1spt-BR!2sbr!4v1722738155481!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map map-sao-luis">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127547.96418040674!2d-44.296230825683615!3d-2.547941879211527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f68ff06f7f6d21%3A0x983102e459a3de47!2zU8OjbyBMdcOtcywgTUE!5e0!3m2!1spt-BR!2sbr!4v1720940500184!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map map-chapada">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31657.87012876392!2d-47.48036808773225!3d-7.327620631552473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92d82ab73299951b%3A0xd604633f89a20a97!2sCarolina%2C%20MA%2C%2065980-000!5e0!3m2!1spt-BR!2sbr!4v1722738306726!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map map-alcantara">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18134.50725168895!2d-44.422409534119716!3d-2.397565452900713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f65f5b089148ef%3A0x68efc57ab2754163!2sAlc%C3%A2ntara%2C%20MA%2C%2065250-000!5e0!3m2!1spt-BR!2sbr!4v1720940174438!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="collum-right">
+                        <div onclick="updateAttractionsButton('Barreirinhas') "   class="card card1">
+                            <h5>BARREIRINHAS</h5>
+                        </div>
+
+                        <div onclick="updateAttractionsButton('São Luís') " 
+                        class="card card2">
+                            <h5>SÃO LUÍS</h5>
+                        </div>
+
+                        <div onclick="updateAttractionsButton('Carolina') " class="card card3">
+                            <h5>CAROLINA</h5>
+                        </div>
+
+                        <div onclick="updateAttractionsButton('Alcântara') " class="card card4">
+                            <h5>ALCÂNTARA</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
