@@ -71,7 +71,7 @@
             const attractionId = new URLSearchParams(window.location.search).get('attractionId');
         
             // Mapeamento das informações de pontos turísticos
-            fetch(`https://api-desafio-5-turismo.onrender.com/tudo/atrativos`).then(res => res.json())
+            fetch(`https://turismo-maranh-o.onrender.com/tudo/atrativos`).then(res => res.json())
             .then((dados) => {
                 const attractionsData = {
                 'attraction-Barreirinhas': {
