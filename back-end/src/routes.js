@@ -6,7 +6,7 @@ const AtrativoController = require('./controllers/AtrativoController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => res.send('PAGE ONE'))
+router.get('/', (req, res) => res.send('PÁGINA INICIAL'))
 
 router.get('/destinos', (DestinoController.pegaTodosDestinos));
 
