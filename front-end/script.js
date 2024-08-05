@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    fetch('https://api-desafio-5-turismo.onrender.com/tudo/destinos').then(res => res.json()).then((dados) => {
+    fetch('https://turismo-maranh-o.onrender.com/tudo/destinos').then(res => res.json()).then((dados) => {
         addCardClickListener(card1, './img/barreirinhas-background.png', 'Barreirinhas', dados[2].descricao , 'visit-lencois');
         addCardClickListener(card2, './img/centro-historico-sao-luis.jpg', 'São Luís', dados[0].descricao, 'visit-sao-luis');
         addCardClickListener(card3, './img/carolina-background.png', 'Carolina', dados[1].descricao, 'visit-chapada');
